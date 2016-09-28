@@ -1,3 +1,4 @@
+/*
 START
 	Alarm ringer
 OM inte vakna
@@ -51,35 +52,51 @@ MEDAN present ej är inslagen
 ANNARS pappret är slut
 	gå till affären och köp nytt
 
-
+*/
 
 var pengar = prompt("Hur mycket pengar har du?");
-var present = "";
+var present = " ";
 var datorPris = 6000;//mycket
 var kläderPris = 1000;//lagom
 var bokPris = 300;//lite
 var inslagen = prompt("Finns det papper? Ja= 1/Nej= 0") 
 
-if (pengar > 5000) {
-present += "dator"
-pengar -= datorPris;
+function julklapp (){
+    
+        while (pengar > 0){
+            if (pengar >= 5000) {
+            present += "dator";
+            pengar -= datorPris;
+            }
+            else if (pengar >= 500 && 5000 > pengar) {
+                present += "kläder";
+                pengar -= kläderPris;
+            }
+            else if (pengar > 0 && pengar < 500) {
+                present += "bok";
+                pengar -= bokPris;
+            }
+            return present;
+        }
+            return "du har inte tillräckligt pengar för att köpa en julklapp";
 }
-else if (pengar > 500 && 5000 > pengar) {
-	present += "kläder"
-	pengar -= kläderPris;
-}
-else{
-	present += "bok"
-	pengar -= bokPris;
-}
-while(inslagen){
-present += "papper"
-console.log(present);
+
+if(inslagen){
+    
+    present += julklapp() + " som är inslagen";
 
 }
-pengar -= 50
-present += "nyköptpapper"
-console.log("du har:"+ pengar + "kvar efter ha köpt:" + present);
+else if (pengar > 50) {
+    pengar -= 50;
+    console.log("Du har köpt papper för att slå in presenten.");
+    present += " nyköptpapper";
+}
+else {
+    console.log('Du har inte tillräckligt pengar kvar');
+}
+
+console.log("du har: SEK"+ pengar + " kvar efter ha köpt: " + present);
+/*
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 function dice(){
@@ -87,7 +104,7 @@ var x = Math.floor((Math.random() * 6) + 1);
 console.log(x);
 }
 dice();
-
+*/
 
 
 
