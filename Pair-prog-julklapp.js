@@ -107,8 +107,7 @@ dice();
 */
 ///Här är en kommentar 
 
-
-TEST TEST TEST (14:11)
+//tagit bort en rad
 
 
 
