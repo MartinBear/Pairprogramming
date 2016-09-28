@@ -105,6 +105,7 @@ console.log(x);
 }
 dice();
 */
+///Här är en kommentar 
 
 
 
