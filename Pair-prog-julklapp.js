@@ -54,14 +54,14 @@ ANNARS pappret är slut
 
 */
 
-var pengar = prompt("Hur mycket pengar har du?");
-var present = " ";
-var datorPris = 6000;//mycket
-var kläderPris = 1000;//lagom
-var bokPris = 300;//lite
-var inslagen = prompt("Finns det papper? Ja= 1/Nej= 0") 
+let pengar = prompt("Hur mycket pengar har du?");
+let present = "";
+const datorPris = 6000;//mycket
+const kläderPris = 1000;//lagom
+const bokPris = 300;//lite
+let inslagen = prompt("Finns det papper? Ja= 1/Nej= 0") 
 
-function julklapp (){
+const julklapp = () => {
     
         while (pengar > 0){
             if (pengar >= 5000) {
@@ -78,15 +78,16 @@ function julklapp (){
             }
             return present;
         }
-            return "du har inte tillräckligt pengar för att köpa en julklapp";
+            console.log("du har inte tillräckligt pengar för att köpa en julklapp");
 }
 
 if(inslagen){
     
     present += julklapp() + " som är inslagen";
+    
 
 }
-else if (pengar > 50) {
+if (pengar > 50) {
     pengar -= 50;
     console.log("Du har köpt papper för att slå in presenten.");
     present += " nyköptpapper";
